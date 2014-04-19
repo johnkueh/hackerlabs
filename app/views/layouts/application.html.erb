@@ -6,15 +6,102 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Hackerhouse" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="#page-top">
+            <i class="fa fa-play-circle"></i>  <span class="light">Hackerhouse.io</span>
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#about">About</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#apply">Apply</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <section class="intro">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h1 class="brand-heading">Hackerhouse</h1>
+              <p class="intro-text">A co-working space in the heart of Surry Hills. <br>Built by hackers, for hackers only.</p>
+              <div class="page-scroll">
+                <a href="#about" class="btn btn-circle">
+                  <i class="fa fa-angle-double-down animated"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container content-section text-center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>About the space</h2>
+          <p>We hack at 35, Buckingham Street, Surry Hills. It only takes 2 minute to walk here from Central Station.</p>
+          <p>You will have your own access card which enables you to hack 24/7 a week. Take a stroll, go for a swim or play a game of basketball in the huge park opposite the building to overcome the 'Programmer's Block'</p>
+          <p>Current resident companies are Zibbet, Issue, and Beaconmaker.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="content-section text-center">
+      <div class="download-section">
+        <div class="container">
+          <div class="col-lg-8 col-lg-offset-2">
+            <h2>Apply for a desk</h2>
+            <h1><span class="brand-heading">$390</span> /mo</h1>
+            <p>Work, hack, play. Do whatever you want. Hackerhouse offers coworking for hackers, an entry level, gym style membership.</p>
+            <p>To apply for a desk, send a POST request to /apply. Include 'name', 'email' and 'message' as parameters, describing who you are and why you want to join us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container content-section text-center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>Contact us</h2>
+          <p>Our hackers are always busy hacking away. To get in touch with us, send a POST request to /contact. Include 'name', 'email' and 'message' as parameters, describing who you are and what you want to tell us.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="map"></div>
+
+    <!-- Google Maps API Key - You will need to use your own API key to use the map feature -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
   </body>
 </html>
