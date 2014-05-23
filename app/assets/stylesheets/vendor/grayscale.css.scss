@@ -60,7 +60,7 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #fff;
+    background-color: rgba(17,96,102,0.8);
 }
 
 .navbar-brand {
@@ -72,7 +72,7 @@ a:focus {
 }
 
 .navbar-custom a {
-    color: #555555;
+    color: white;
 }
 
 .navbar-custom .nav li a {
@@ -91,7 +91,7 @@ a:focus {
 .navbar-toggle {
     padding: 4px 6px;
     font-size: 16px;
-    color: #555555;
+    color: white;
 }
 
 .navbar-toggle:focus,
@@ -112,7 +112,7 @@ a:focus {
 
     .top-nav-collapse {
         padding: 0;
-        background-color: rgba(74,157,122,0.8);
+        background-color: rgba(17,96,102,0.8);
     }
     .navbar-custom a {
       color: #fff;
@@ -126,7 +126,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: image-url('bg.jpg') no-repeat bottom center scroll;
+    background: image-url('bg-alt.jpg') no-repeat bottom center scroll;
     background-color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -146,7 +146,16 @@ a:focus {
 .intro-text {
     font-size: 18px;
 }
-
+.logo {
+  width: 500px;
+  margin-bottom: 30px;
+  &.small {
+    width: 150px;
+  }
+}
+.navbar .logo {
+  margin-top: -7px;
+}
 @media(min-width:767px) {
     .intro {
         height: 100%;
@@ -244,7 +253,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: image-url('bg-long.jpg') no-repeat center center scroll;
+    background: image-url('bg-long-new.jpg') no-repeat center center scroll;
     background-color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -261,6 +270,12 @@ a:focus {
 @media(min-width:767px) {
     .content-section {
         padding-top: 250px;
+    }
+    .hackerlabs-images {
+      img {
+        width: 400px;
+        margin: 5px;
+      }
     }
 
     .download-section {
@@ -318,9 +333,25 @@ a:focus {
         padding: 0;
     }
 
+  .hackerlabs-images {
+    img {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+
     ul.banner-social-buttons>li:last-child {
         margin-bottom: 0;
     }
+
+  .logo {
+    width: 200px;
+    margin-bottom: 30px;
+    &.small {
+      width: 100px;
+      margin-top: -3px;
+    }
+  }
 }
 
 ::-moz-selection {
@@ -356,5 +387,17 @@ body {
   }
   p {
     font-size: 12px;
+  }
+}
+
+.btn-apply {
+  background: white;
+  color: rgba(17,96,102,1.0);
+  padding: 20px 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  &:hover {
+    background: rgba(17,96,102,0.8);
+    color: white;
   }
 }
